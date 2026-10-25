@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Smart Cookie Manager",
+  "version": "1.3.1",
+  "description": "Applies your saved cookie consent preference.",
+  "permissions": ["storage", "activeTab", "cookies"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "dist/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
